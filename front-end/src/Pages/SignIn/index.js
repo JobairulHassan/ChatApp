@@ -11,7 +11,7 @@ import { Typography } from "@mui/material";
 import styled from "@emotion/styled";
 
 const StyledTypography = styled(Typography)({
-  color: "#03ac13c2",
+  color: "#4287f5c2",
   "&:hover": { cursor: "pointer" },
 });
 

@@ -10,7 +10,7 @@ import styled from "@emotion/styled";
 import axios from "axios";
 
 const StyledTypography = styled(Typography)({
-  color: "#03ac13c2",
+  color: "#4287f5c2",
   "&:hover": { cursor: "pointer" },
 });
 

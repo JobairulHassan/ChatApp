@@ -28,3 +28,4 @@ D:\React\ChatApp\back-end\ChatApp.Business\obj\Debug\net8.0\ChatApp.Business.dll
 D:\React\ChatApp\back-end\ChatApp.Business\obj\Debug\net8.0\refint\ChatApp.Business.dll
 D:\React\ChatApp\back-end\ChatApp.Business\obj\Debug\net8.0\ChatApp.Business.pdb
 D:\React\ChatApp\back-end\ChatApp.Business\obj\Debug\net8.0\ref\ChatApp.Business.dll
+D:\React\ChatApp\back-end\ChatApp.Business\obj\Debug\net8.0\ChatApp.Business.sourcelink.json

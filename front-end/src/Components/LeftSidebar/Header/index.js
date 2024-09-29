@@ -1,4 +1,4 @@
-import { ListItemIcon, MenuItem, Stack, useTheme } from "@mui/material";
+import { ListItemIcon, MenuItem, Stack, useTheme, Typography} from "@mui/material";
 import React, { useContext, useState } from "react";
 import { Logout, Settings } from "@mui/icons-material";
 import AuthContext from "../../General/Provider/AuthProvider";
@@ -40,6 +40,7 @@ const LeftSidebarHeader = () => {
       justifyContent={"space-between"}
     >
       {/* <UserCard user={user} textColor="#03AC13" size="xLarge" /> */}
+      <Typography variant="h6"> {user.username}</Typography>
       <ClickMenu
         handleClick={handleClickMenu}
         handleClose={handleCloseMenu}

@@ -4,8 +4,8 @@ const lightTheme = createTheme({
   palette: {
     mode: "light",
     primary: {
-      main: "#03AC13",
-      light: "#03AC13c2",
+      main: "#4287f5",
+      light: "#4287f5c2",
     },
     secondary: {
       main: "#f50057",
@@ -14,7 +14,7 @@ const lightTheme = createTheme({
       paper: "#f7f7f7",
     },
     text: {
-      primary: "#555555",
+      primary: "#3d3d3d",
     },
     input: {
       primary: "white",
@@ -26,8 +26,8 @@ const darkTheme = createTheme({
   palette: {
     mode: "dark",
     primary: {
-      main: "#03AC13",
-      light: "#03AC13c2",
+      main: "#4287f5",
+      light: "#4287f5c2",
     },
     secondary: {
       main: "#f48fb1",

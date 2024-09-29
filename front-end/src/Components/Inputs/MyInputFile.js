@@ -9,9 +9,9 @@ const MyInputFile = ({ onChange }) => {
 
   const StyledFileInputButton = styled(Button)({
     "&:hover": {
-      background: "#03AC1320",
+      background: "#4287f520",
     },
-    color: "#03AC13",
+    color: "#4287f5",
     borderRadius: "4px",
   });
 

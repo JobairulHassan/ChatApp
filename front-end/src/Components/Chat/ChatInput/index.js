@@ -28,7 +28,7 @@ const ChatInput = () => {
           setTextMessage("");
         }}
       >
-        <SendIcon sx={{ color: "#03AC13", fontSize: "35px" }} />
+        <SendIcon sx={{ color: "#4287f5", fontSize: "35px" }} />
       </IconButton>
     </Stack>
   );

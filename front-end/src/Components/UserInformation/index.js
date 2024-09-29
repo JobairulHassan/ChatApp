@@ -14,7 +14,7 @@ const HiddenUserInformation = () => {
         sx={{ marginRight: "10px" }}
         onClick={() => setDrawerState(true)}
       >
-        <InfoIcon sx={{ color: "#03AC1390", fontSize: "30px" }} />
+        <InfoIcon sx={{ color: "#4287f590", fontSize: "30px" }} />
       </IconButton>
       <Drawer
         anchor={"right"}

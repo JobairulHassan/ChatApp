@@ -26,3 +26,4 @@ D:\React\ChatApp\back-end\ChatApp.Persistence\obj\Debug\net8.0\refint\ChatApp.Pe
 D:\React\ChatApp\back-end\ChatApp.Persistence\obj\Debug\net8.0\ChatApp.Persistence.pdb
 D:\React\ChatApp\Back-end\ChatApp.Persistence\obj\Debug\net8.0\ChatApp.Persistence.genruntimeconfig.cache
 D:\React\ChatApp\Back-end\ChatApp.Persistence\obj\Debug\net8.0\ref\ChatApp.Persistence.dll
+D:\React\ChatApp\back-end\ChatApp.Persistence\obj\Debug\net8.0\ChatApp.Persistence.sourcelink.json

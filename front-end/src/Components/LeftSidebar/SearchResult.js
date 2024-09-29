@@ -68,6 +68,7 @@ const SearchResult = ({ pageNumber, setPageNumber, searchText }) => {
                   <Tooltip title="start a chat" arrow>
                     <IconButton onClick={() => setSelectedUser(user)}>
                       <ChatIcon sx={{ color: "#03AC1390" }} />
+                      <Typography>{user.username}</Typography>
                     </IconButton>
                   </Tooltip>
                 )}

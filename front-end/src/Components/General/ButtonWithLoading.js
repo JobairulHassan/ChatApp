@@ -5,9 +5,9 @@ import React from "react";
 const StyledButton = styled(Button)({
   height: "42px",
   textTransform: "none",
-  background: "#03ac13c2",
+  background: "#4287f5c2",
   "&:hover": {
-    background: "#03AC13",
+    background: "#4287f5",
   },
 });
 

@@ -11,7 +11,7 @@ const StyledBox = styled(Box)(({ theme }) => ({
   width: "100%",
   background:
     theme.palette.mode === "light"
-      ? "linear-gradient(180deg, #c5fec5 -50%, #FFFFFF 50%)"
+      ? "linear-gradient(180deg, #c5c7fe -50%, #FFFFFF 50%)"
       : "",
 }));
 

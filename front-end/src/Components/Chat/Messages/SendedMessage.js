@@ -10,7 +10,7 @@ const SendedMessage = ({ message, index }) => {
         p={1}
         borderRadius={"15px"}
         color={"white"}
-        bgcolor={"#03AC13"}
+        bgcolor={"#4287f5"}
         alignSelf={"end"}
         maxWidth={{ xs: "270px", sm: "400px", md: "500px", lg: "700px" }}
         sx={{

@@ -301,3 +301,4 @@ D:\React\ChatApp\back-end\ChatApp.Presentation\bin\Debug\net8.0\Scrutor.dll
 D:\React\ChatApp\back-end\ChatApp.Presentation\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.dll
 D:\React\ChatApp\back-end\ChatApp.Presentation\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
 D:\React\ChatApp\back-end\ChatApp.Presentation\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\React\ChatApp\back-end\ChatApp.Presentation\obj\Debug\net8.0\ChatApp.Presentation.sourcelink.json

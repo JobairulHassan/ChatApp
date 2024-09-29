@@ -1,4 +1,4 @@
-import { Box, Stack, useTheme } from "@mui/material";
+import { Box, Stack, useTheme, Typography} from "@mui/material";
 import React, { useContext } from "react";
 //import UserCard from "../UserCard";
 import { ChatContext } from "../General/Provider/ChatProvider";
@@ -12,9 +12,10 @@ const ChatHeader = () => {
     <Stack direction={"row"} justifyContent={"space-between"}>
       <Stack direction={"row"} spacing={1}>
         <HiddenSidebar />
-        {/* <Box display={{ xs: "none", sm: "flex" }}>
-          <UserCard user={selectedUser} />
-        </Box> */}
+        <Box display={{ xs: "none", sm: "flex" }} alignItems="flex-end" justifyContent="flex-start">
+          <Typography variant="h6"> {selectedUser.username}</Typography>
+          {/* <UserCard user={selectedUser} /> */}
+        </Box>
         <Box display={{ xs: "flex", sm: "none" }}>
           {/* <UserCard user={selectedUser} size="medium" /> */}
         </Box>
