@@ -21,12 +21,12 @@ const SignInPage = () => {
   const { login } = useContext(AuthContext);
   const [isLoading, setIsLoading] = useState(false);
   const [inputs, setInputs] = useState({
-    username: "",
+    email: "",
     password: "",
   });
 
   const [validationErrors, setValidationErrors] = useState({
-    username: " ",
+    email: " ",
     password: " ",
   });
 
@@ -43,9 +43,9 @@ const SignInPage = () => {
   };
 
   const isValidate =
-    validationErrors.username === " " &&
+    validationErrors.email === " " &&
     validationErrors.password === " " &&
-    inputs.username !== "" &&
+    inputs.email !== "" &&
     inputs.password !== "";
 
   const onSubmit = async (e) => {
@@ -71,10 +71,10 @@ const SignInPage = () => {
               ...validationErrors,
               password: errorMessage,
             });
-          } else if (errorMessage === "no user with this username") {
+          } else if (errorMessage === "no user with this email") {
             setValidationErrors({
               ...validationErrors,
-              username: errorMessage,
+              email: errorMessage,
             });
           }
         } else {
@@ -87,11 +87,11 @@ const SignInPage = () => {
   return (
     <SignPageContainer>
       <MyTextField
-        label="username"
-        name="username"
+        label="email"
+        name="email"
         onChange={onChange}
-        value={inputs.username}
-        validation={validationErrors.username}
+        value={inputs.email}
+        validation={validationErrors.email}
       />
       <MyPasswordInputField
         name={"password"}

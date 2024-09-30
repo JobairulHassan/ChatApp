@@ -7,5 +7,6 @@
         public DateTime CreationDate { get; set; }
         public int SenderId { get; set; }
         public int ReceiverId { get; set; }
+        public int IsDeleted { get; set; }
     }
 }

@@ -24,14 +24,14 @@ namespace ChatApp.Business.Services.UserService.Implementations
             return userId;
         }
 
-        public string GetAuthenticatedUsername()
+        public string GetAuthenticatedEmail()
         {
-            var username = string.Empty;
+            var email = string.Empty;
             if (httpContextAccessor.HttpContext != null)
             {
-                username = httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.Name).Value;
+                email = httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.Name).Value;
             }
-            return username;
+            return email;
         }
     }
 }

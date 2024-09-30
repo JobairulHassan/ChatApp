@@ -29,9 +29,15 @@ namespace ChatApp.Persistence.Repositories.Implementations
             int pageSize,
             string searchText = null)
         {
-            var users = context.Users.AsQueryable();             
-            if (!String.IsNullOrEmpty(searchText)) 
-                users = users.Where(u => u.Username.Contains(searchText));
+            var users = context.Users.AsQueryable();
+            if (!string.IsNullOrEmpty(searchText))
+            {
+                // Search by first name, last name, or email
+                users = users.Where(u =>
+                    u.FirstName.Contains(searchText) ||
+                    u.LastName.Contains(searchText) ||
+                    u.Email.Contains(searchText));
+            }
 
             var usersCount = await users.CountAsync();
             var numOfPages = Math.Ceiling(usersCount / (pageSize * 1f));
@@ -39,8 +45,13 @@ namespace ChatApp.Persistence.Repositories.Implementations
             {
                 return null;
             }
-            var usersList = await users.OrderBy(c => c.Username).Skip((pageNumber - 1) * pageSize).Take(pageSize)
-               .ToListAsync();
+
+            var usersList = await users.OrderBy(c => c.FirstName)
+                           .ThenBy(c => c.LastName)
+                           .Skip((pageNumber - 1) * pageSize)
+                           .Take(pageSize)
+                           .ToListAsync();
+
             var result = Tuple.Create(usersList, (int)numOfPages);
             return result;
         }
@@ -52,16 +63,16 @@ namespace ChatApp.Persistence.Repositories.Implementations
                 .FirstOrDefaultAsync();
         }
 
-        public async Task<User?> GetUserByUsername(string username)
+        public async Task<User?> GetUserByEmail(string email)
         {
             return await context.Users
-                .Where(c => c.Username == username)
+                .Where(c => c.Email == email)
                 .FirstOrDefaultAsync();
         }
 
-        public bool CheckIfUsernameExists(string username)
+        public bool CheckIfEmailExists(string email)
         {
-            return context.Users.Any(u => u.Username == username);
+            return context.Users.Any(u => u.Email == email);
         }
 
     }

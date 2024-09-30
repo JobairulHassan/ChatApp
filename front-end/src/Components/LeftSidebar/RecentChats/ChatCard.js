@@ -29,7 +29,7 @@ const ChatCard = ({ chat }) => {
         {/* <MyAvatar user={chat.user} /> */}
         <Stack width={"80%"}>
           <StyledTypography variant="h6" fontSize={{ xs: "14px", md: "16px" }}>
-            {chat.user.username}
+            {chat.user.firstName +" "+chat.user.lastName}
           </StyledTypography>
           <StyledTypography2>{chat.lastMessage.textBody}</StyledTypography2>
         </Stack>

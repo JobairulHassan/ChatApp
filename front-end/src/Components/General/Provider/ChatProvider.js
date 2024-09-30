@@ -26,7 +26,7 @@ const ChatContextProvider = ({ children }) => {
         })
         .configureLogging(LogLevel.Information)
         .build();
-      connection.on("ReceiveMessage", (receivedMessage, username) => {
+      connection.on("ReceiveMessage", (receivedMessage, email) => {
         const currentSelectedUser = selectedUserRef.current;
         if (
           currentSelectedUser &&
@@ -34,7 +34,7 @@ const ChatContextProvider = ({ children }) => {
         ) {
           setMessages((messages) => [...messages, receivedMessage]);
         } else {
-          openAlert("success", `you received a message from ${username}`);
+          openAlert("success", `you received a message from ${email}`);
           setNewMessage(receivedMessage);
         }
       });
@@ -103,6 +103,28 @@ const ChatContextProvider = ({ children }) => {
     }
   };
 
+  const handleDeleteMessage = async (id) => {
+    console.log(id);
+    if (!id) {
+      console.warn("No message ID provided for deletion.");
+      return;
+    }
+  
+    try {
+      await axios.put(`http://localhost:7271/api/private-messages/delete-message/${id}`, null, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+  
+      setMessages((prevMessages) => prevMessages.filter(message => message.id !== id));
+      
+      console.log(`Message with ID ${id} deleted successfully.`);
+    } catch (error) {
+      console.error("Error deleting message:", error);
+    }
+  };
+
   return (
     <ChatContext.Provider
       value={{
@@ -114,6 +136,7 @@ const ChatContextProvider = ({ children }) => {
         loadMessages,
         activeUsers,
         newMessage,
+        handleDeleteMessage,
       }}
     >
       {children}

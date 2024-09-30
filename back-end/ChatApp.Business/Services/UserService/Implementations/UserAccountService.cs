@@ -30,14 +30,16 @@ namespace ChatApp.Business.Services.UserService.Implementations
 
         public async Task<UserResponseDTO> RegisterUserAsync(UserRequestDTO userRequestDTO)
         {
-            if (userRepository.CheckIfUsernameExists(userRequestDTO.Username))
+            if (userRepository.CheckIfEmailExists(userRequestDTO.Email))
             {
-                throw new NotFoundException(UserExceptionMessages.UsernameAlreadyExsist);
+                throw new NotFoundException(UserExceptionMessages.EmailAlreadyExsist);
             }
             PasswordHashing.HashPassword(userRequestDTO.Password, out byte[] passwordHash, out byte[] passwordSalt);
             var user = new User()
             {
-                Username = userRequestDTO.Username.ToLower(),
+                FirstName = userRequestDTO.FirstName,
+                LastName = userRequestDTO.LastName,
+                Email = userRequestDTO.Email, //.ToLower()
                 PasswordHash = passwordHash,
                 PasswordSalt = passwordSalt,
             };
@@ -48,10 +50,10 @@ namespace ChatApp.Business.Services.UserService.Implementations
 
         public async Task<string> LoginUserAsync(UserRequestDTO userRequestDTO)
         {
-            var user = await userRepository.GetUserByUsername(userRequestDTO.Username.ToLower());
+            var user = await userRepository.GetUserByEmail(userRequestDTO.Email); //.ToLower()
             if (user == null)
             {
-                throw new NotFoundException(UserExceptionMessages.NotFoundUserByUsername);
+                throw new NotFoundException(UserExceptionMessages.NotFoundUserByEmail);
             }
             if (!PasswordHashing.VerifyPassword(userRequestDTO.Password, user.PasswordHash, user.PasswordSalt))
             {

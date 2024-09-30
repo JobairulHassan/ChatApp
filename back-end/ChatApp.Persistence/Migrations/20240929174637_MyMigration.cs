@@ -17,7 +17,9 @@ namespace ChatApp.Persistence.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Username = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     About = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IsDarkTheme = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
                     PasswordHash = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
@@ -37,7 +39,8 @@ namespace ChatApp.Persistence.Migrations
                     TextBody = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     SenderId = table.Column<int>(type: "int", nullable: false),
-                    ReceiverId = table.Column<int>(type: "int", nullable: false)
+                    ReceiverId = table.Column<int>(type: "int", nullable: false),
+                    IsDeleted = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -67,9 +70,9 @@ namespace ChatApp.Persistence.Migrations
                 column: "SenderId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Users_Username",
+                name: "IX_Users_Email",
                 table: "Users",
-                column: "Username",
+                column: "Email",
                 unique: true);
         }
 

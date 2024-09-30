@@ -7,6 +7,7 @@ namespace ChatApp.Persistence.Repositories.Interfaces
     {
         Task AddAsync(PrivateMessage message);
         void Delete(PrivateMessage message);
+        int DeletePrivateMessage(int id, int userId);
         Task<Tuple<List<PrivateMessage>, bool>> GetPrivateMessagesForPrivateChat(
             DateTime pageDate,
             int pageSize,

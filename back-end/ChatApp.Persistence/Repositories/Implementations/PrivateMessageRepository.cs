@@ -24,6 +24,15 @@ namespace ChatApp.Persistence.Repositories.Implementations
             context.PrivateMessages.Remove(message);
         }
 
+        public int DeletePrivateMessage(int id, int userId)
+        {
+           var result = context.PrivateMessages
+            .Where(b => b.Id == id)
+            .ExecuteUpdate(m => m.SetProperty(b => b.IsDeleted, userId));
+
+            return result;
+        }
+
         public async Task<Tuple<List<PrivateMessage>, bool>> GetPrivateMessagesForPrivateChat(
             DateTime pageDate,
             int pageSize,
@@ -49,7 +58,7 @@ namespace ChatApp.Persistence.Repositories.Implementations
         public async Task<IEnumerable<ChatWithLastMessage>> GetRecentChatsForUser(int userId)
         {
             var recentChatsWithLastMessages = await context.PrivateMessages
-                .Where(m => m.SenderId == userId || m.ReceiverId == userId)
+                .Where(m => (m.SenderId == userId || m.ReceiverId == userId) && m.IsDeleted == 0)
                 .GroupBy(m => m.SenderId == userId ? m.ReceiverId : m.SenderId)
                 .OrderByDescending(g => g.Max(m => m.CreationDate))
                 .Take(10)

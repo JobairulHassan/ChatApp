@@ -13,7 +13,7 @@ const ChatHeader = () => {
       <Stack direction={"row"} spacing={1}>
         <HiddenSidebar />
         <Box display={{ xs: "none", sm: "flex" }} alignItems="flex-end" justifyContent="flex-start">
-          <Typography variant="h6"> {selectedUser.username}</Typography>
+          <Typography variant="h6"> {selectedUser.firstName +" "+selectedUser.lastName}</Typography>
           {/* <UserCard user={selectedUser} /> */}
         </Box>
         <Box display={{ xs: "flex", sm: "none" }}>

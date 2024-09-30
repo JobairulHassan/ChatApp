@@ -40,7 +40,7 @@ const LeftSidebarHeader = () => {
       justifyContent={"space-between"}
     >
       {/* <UserCard user={user} textColor="#03AC13" size="xLarge" /> */}
-      <Typography variant="h6"> {user.username}</Typography>
+      <Typography variant="h6"> {user.firstName +" "+ user.lastName}</Typography>
       <ClickMenu
         handleClick={handleClickMenu}
         handleClose={handleCloseMenu}

@@ -12,5 +12,6 @@ namespace ChatApp.Business.Services.PrivateMessageServices.Interfaces
             int firstUserId,
             int secoundUserId);
         Task<IEnumerable<ChatWithLastMessageResponseDTO>> GetRecentChatsForUser(int userId);
+        Task<int> DeletePrivateMessage(int id);
     }
 }

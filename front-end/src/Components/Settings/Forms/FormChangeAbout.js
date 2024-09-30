@@ -57,7 +57,8 @@ const FormChangeAbout = () => {
         },
       }}
     >
-      <MyTextField disabled value={user.username} />
+      <MyTextField disabled value={user.firstName +" "+ user.lastName} />
+      <MyTextField disabled value={user.email} />
       <ReactQuill
         value={about}
         onChange={handleAboutChange}

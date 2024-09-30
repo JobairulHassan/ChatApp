@@ -42,7 +42,7 @@ const Content = ({ closeDrawer }) => {
             : "/Assets/defaultAvatar.png"
         }
       /> */}
-      <StyledTypography>{selectedUser.username}</StyledTypography>
+      <StyledTypography>{selectedUser.email}</StyledTypography>
       <StyledBox>
         <StyledHtmlText text={selectedUser.about} />
       </StyledBox>

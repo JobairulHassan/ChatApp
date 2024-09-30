@@ -44,7 +44,8 @@ namespace ChatApp.Business.Services.PrivateMessageServices.Implementations
                 ReceiverId = destinationUserId,
                 SenderId = sourceUserId,
                 CreationDate = DateTime.Now,
-                TextBody = textMessage
+                TextBody = textMessage,
+                IsDeleted = 0
             };
             await privateMessageRepository.AddAsync(message);
             await unitOfWork.SaveChangesAsync();
@@ -92,6 +93,13 @@ namespace ChatApp.Business.Services.PrivateMessageServices.Implementations
             var queryResult = await privateMessageRepository.GetRecentChatsForUser(userId);
 
             return mapper.Map<IEnumerable<ChatWithLastMessageResponseDTO>>(queryResult);
+        }
+
+        Task<int> IPrivateMessageService.DeletePrivateMessage(int id)
+        {
+            var userId = authenticatedUserService.GetAuthenticatedUserId();
+            var queryResult = privateMessageRepository.DeletePrivateMessage(id, userId);
+            return Task.FromResult(queryResult);
         }
     }
 }

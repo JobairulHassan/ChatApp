@@ -4,9 +4,9 @@
     {
         public const string NotFoundUserById = "no user with this id";
 
-        public const string NotFoundUserByUsername = "no user with this username";
+        public const string NotFoundUserByEmail = "no user with this email";
 
-        public const string UsernameAlreadyExsist = "this username is already exist";
+        public const string EmailAlreadyExsist = "this email is already exist";
 
         public const string IncorrectPassword = "password is not correct";
 

@@ -19,13 +19,17 @@ const SignUpPage = () => {
   const { openAlert } = useContext(AlertContext);
   const [isLoading, setIsLoading] = useState(false);
   const [inputs, setInputs] = useState({
-    username: "",
+    firstname:"",
+    lastname:"",
+    email: "",
     password: "",
     confirmPassword: "",
   });
 
   const [validationErrors, setValidationErrors] = useState({
-    username: " ",
+    firstname: " ",
+    lastname: " ",
+    email: " ",
     password: " ",
     confirmPassword: " ",
   });
@@ -34,13 +38,37 @@ const SignUpPage = () => {
     const { name, value } = e.target;
     const validationErrorsCopy = { ...validationErrors };
 
-    if (name === "username") {
-      const usernameRegex = /^[A-Za-z][A-Za-z0-9_]{4,17}$/;
+    if (name === "firstname") {
+      const firstnameRegex = /^[A-Za-z][A-Za-z]*$/;
       if (!value) {
         validationErrorsCopy[name] = "you must fill this field.";
-      } else if (!usernameRegex.test(value)) {
+      } else if (!firstnameRegex.test(value)) {
         validationErrorsCopy[name] =
-          "please use letters, numbers, or underscores. [5-18] char.";
+          "please use letters. Only small and capital letters are allowed.";
+      } else {
+        validationErrorsCopy[name] = " ";
+      }
+    }
+
+    if (name === "lastname") {
+      const lastnameRegex = /^[A-Za-z][A-Za-z]*$/;
+      if (!value) {
+        validationErrorsCopy[name] = "you must fill this field.";
+      } else if (!lastnameRegex.test(value)) {
+        validationErrorsCopy[name] =
+          "please use letters. Only small and capital letters are allowed.";
+      } else {
+        validationErrorsCopy[name] = " ";
+      }
+    }
+
+    if (name === "email") {
+      const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+      if (!value) {
+        validationErrorsCopy[name] = "you must fill this field.";
+      } else if (!emailRegex.test(value)) {
+        validationErrorsCopy[name] =
+          "please use a valid email";
       } else {
         validationErrorsCopy[name] = " ";
       }
@@ -77,10 +105,14 @@ const SignUpPage = () => {
   };
 
   const isValidate =
-    validationErrors.username === " " &&
+    validationErrors.firstname === " " &&
+    validationErrors.lastname === " " &&
+    validationErrors.email === " " &&
     validationErrors.password === " " &&
     validationErrors.confirmPassword === " " &&
-    inputs.username !== "" &&
+    inputs.firstname !== "" &&
+    inputs.lastname !== "" &&
+    inputs.email !== "" &&
     inputs.password !== "" &&
     inputs.confirmPassword !== "";
 
@@ -105,10 +137,10 @@ const SignUpPage = () => {
         .catch((error) => {
           if (error.response) {
             var errorMessage = error.response.data.error;
-            if (errorMessage === "this username is already exist") {
+            if (errorMessage === "this email is already exist") {
               setValidationErrors({
                 ...validationErrors,
-                username: errorMessage,
+                email: errorMessage,
               });
             }
           } else {
@@ -122,11 +154,25 @@ const SignUpPage = () => {
   return (
     <SignPageContainer>
       <MyTextField
-        label="username"
-        name="username"
+        label="firstname"
+        name="firstname"
         onChange={onChange}
-        value={inputs.username}
-        validation={validationErrors.username}
+        value={inputs.firstname}
+        validation={validationErrors.firstname}
+      />
+      <MyTextField
+        label="lastname"
+        name="lastname"
+        onChange={onChange}
+        value={inputs.lastname}
+        validation={validationErrors.lastname}
+      />
+      <MyTextField
+        label="email"
+        name="email"
+        onChange={onChange}
+        value={inputs.email}
+        validation={validationErrors.email}
       />
       <MyPasswordInputField
         name={"password"}

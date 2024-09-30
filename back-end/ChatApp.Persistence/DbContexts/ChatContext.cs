@@ -26,7 +26,7 @@ namespace ChatApp.Persistence.DbContexts
 
 
             modelBuilder.Entity<User>().Property(u => u.IsDarkTheme).HasDefaultValue(false);
-            modelBuilder.Entity<User>().HasIndex(u => u.Username).IsUnique();
+            modelBuilder.Entity<User>().HasIndex(u => u.Email).IsUnique();
 
         }
     }

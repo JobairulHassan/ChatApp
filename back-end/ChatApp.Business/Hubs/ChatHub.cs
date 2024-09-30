@@ -30,8 +30,8 @@ namespace ChatApp.Business.Hubs
             var Storedmessage = await privateMessageService.StorePrivateMessage(userId, message);
             if (activeUsers.ContainsKey(userId))
             {
-                var username = authenticatedUserService.GetAuthenticatedUsername();
-                await Clients.Client(activeUsers[userId]).SendAsync("ReceiveMessage", Storedmessage, username);
+                var email = authenticatedUserService.GetAuthenticatedEmail();
+                await Clients.Client(activeUsers[userId]).SendAsync("ReceiveMessage", Storedmessage, email);
             }
         }
 
