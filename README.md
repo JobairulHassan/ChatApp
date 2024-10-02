@@ -65,3 +65,4 @@
   - To delete message, hover mouse pointer over the message and press mouse right-click, the delete button will appear.
   - If you delete your sended message it will show as _`Message Removed`_ to both sender and receiver side.
   - If you delete a received message then it will simply removed from your side but still visible in the receiver end.
+### [Project Demo Video](https://drive.google.com/file/d/1Tpv4_FVZnq8lBs0pASv6AURNvoRa9V-A/view?usp=sharing)
