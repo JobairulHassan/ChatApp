@@ -22,10 +22,12 @@ const SignInPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [inputs, setInputs] = useState({
     email: "",
+    password: "",
   });
 
   const [validationErrors, setValidationErrors] = useState({
     email: " ",
+    password: " ",
   });
 
   const onChange = (e) => {
@@ -42,7 +44,9 @@ const SignInPage = () => {
 
   const isValidate =
     validationErrors.email === " " &&
-    inputs.email !== "";
+    validationErrors.password === " " &&
+    inputs.email !== "" &&
+    inputs.password !== "";
 
   const onSubmit = async (e) => {
     setIsLoading(true);
@@ -62,7 +66,12 @@ const SignInPage = () => {
         console.error(error);
         if (error.response) {
           var errorMessage = error.response.data.error;
-          if (errorMessage === "no user with this email") {
+          if (errorMessage === "password is not correct") {
+            setValidationErrors({
+              ...validationErrors,
+              password: errorMessage,
+            });
+          } else if (errorMessage === "no user with this email") {
             setValidationErrors({
               ...validationErrors,
               email: errorMessage,
@@ -84,7 +93,13 @@ const SignInPage = () => {
         value={inputs.email}
         validation={validationErrors.email}
       />
-      
+      <MyPasswordInputField
+        name={"password"}
+        label={"password"}
+        value={inputs.password}
+        onChange={onChange}
+        validation={validationErrors.password}
+      />
       <ButtonWithLoading
         isLoading={isLoading}
         onClick={onSubmit}

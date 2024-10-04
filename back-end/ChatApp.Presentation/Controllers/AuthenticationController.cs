@@ -23,8 +23,9 @@ namespace ChatApp.Presentation.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login(UserRequestDTO userLogin)
+        public async Task<IActionResult> Login(LoginDTO userLogin)
         {
+            System.Diagnostics.Debug.WriteLine(userLogin);
             var token = await userAccountService.LoginUserAsync(userLogin);
             return Ok(token);
         }

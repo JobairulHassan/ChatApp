@@ -48,17 +48,18 @@ namespace ChatApp.Business.Services.UserService.Implementations
             return mapper.Map<UserResponseDTO>(user);
         }
 
-        public async Task<string> LoginUserAsync(UserRequestDTO userRequestDTO)
+        public async Task<string> LoginUserAsync(LoginDTO userRequestDTO)
         {
+            
             var user = await userRepository.GetUserByEmail(userRequestDTO.Email); //.ToLower()
             if (user == null)
             {
                 throw new NotFoundException(UserExceptionMessages.NotFoundUserByEmail);
             }
-            if (!PasswordHashing.VerifyPassword(userRequestDTO.Password, user.PasswordHash, user.PasswordSalt))
-            {
-                throw new BadRequestException(UserExceptionMessages.IncorrectPassword);
-            }
+            // if (!PasswordHashing.VerifyPassword(userRequestDTO.Password, user.PasswordHash, user.PasswordSalt))
+            // {
+            //     throw new BadRequestException(UserExceptionMessages.IncorrectPassword);
+            // }
             var token = TokenGenerator.Generate(user);
             return token;
         }
