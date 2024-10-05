@@ -65,4 +65,27 @@
   - To delete message, hover mouse pointer over the message and press mouse right-click, the delete button will appear.
   - If you delete your sended message it will show as _`Message Removed`_ to both sender and receiver side.
   - If you delete a received message then it will simply removed from your side but still visible in the receiver end.
-### [Project Demo Video](https://drive.google.com/file/d/1Tpv4_FVZnq8lBs0pASv6AURNvoRa9V-A/view?usp=sharing)
+## Project ScreenShorts
+### sign-in / sign-up
+<table>
+  <tr>
+    <td><img src=".\demoPic\Registration.png" alt="Sign-in" width="300"/></td>
+    <td><img src=".\demoPic\login.png" alt="Sign-up" width="300"/></td>
+  </tr>
+</table>
+### Search a User
+[User Search](.\demoPic\search.png) 
+### Chat UI, delete conversation Option and chat delete from sender
+ <table>
+  <tr>
+    <td><img src=".\demoPic\deleteReceiver.png" alt="Delete option after Right click" width="300"/></td>
+    <td><img src=".\demoPic\deleteSender.png" alt="Delete message from sender" width="300"/></td>
+  </tr>
+</table>
+### About and Change Password UI
+<table>
+  <tr>
+    <td><img src=".\demoPic\addAbout.png" alt="About" width="300"/></td>
+    <td><img src=".\demoPic\changePassword.png" alt="Change Password" width="300"/></td>
+  </tr>
+</table>

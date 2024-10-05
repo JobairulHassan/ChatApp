@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\React\\ChatApp\\back-end\\ChatApp.Persistence\\ChatApp.Persistence.csproj": {}
+    "D:\\React\\ChatApp\\Back-end\\ChatApp.Persistence\\ChatApp.Persistence.csproj": {}
   },
   "projects": {
-    "D:\\React\\ChatApp\\back-end\\ChatApp.Persistence\\ChatApp.Persistence.csproj": {
+    "D:\\React\\ChatApp\\Back-end\\ChatApp.Persistence\\ChatApp.Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\React\\ChatApp\\back-end\\ChatApp.Persistence\\ChatApp.Persistence.csproj",
+        "projectUniqueName": "D:\\React\\ChatApp\\Back-end\\ChatApp.Persistence\\ChatApp.Persistence.csproj",
         "projectName": "ChatApp.Persistence",
-        "projectPath": "D:\\React\\ChatApp\\back-end\\ChatApp.Persistence\\ChatApp.Persistence.csproj",
+        "projectPath": "D:\\React\\ChatApp\\Back-end\\ChatApp.Persistence\\ChatApp.Persistence.csproj",
         "packagesPath": "C:\\Users\\Jobair\\.nuget\\packages\\",
-        "outputPath": "D:\\React\\ChatApp\\back-end\\ChatApp.Persistence\\obj\\",
+        "outputPath": "D:\\React\\ChatApp\\Back-end\\ChatApp.Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jobair\\AppData\\Roaming\\NuGet\\NuGet.Config"
