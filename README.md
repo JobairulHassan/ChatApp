@@ -57,7 +57,7 @@
 
 ## Usage Instructions
   - SignUp first if you are a new user. Provide proper information in the sign-up form. After successful registration it will redirect to sign-in page.
-  - From sign-in page login to the system using mail and password.
+  - From sign-in page login to the system using mail.
   - In left side bar the list of previous chats will shown. Click on a specific user to load previous conversations and continue chat.
   - You can find settings, theme change and sign-out option at the top of left side `three dot` menu.
   - Inside `settings` update `about` and `change password` functionality is given.
@@ -73,12 +73,14 @@
     <td><img src=".\demoPic\login.png" alt="Sign-up" width="500"/></td>
   </tr>
 </table>
+
 ### Search a User
 <table>
   <tr>
     <td><img src=".\demoPic\search.png" alt="Search a user" width="900"/></td>
   </tr>
 </table>
+
 ### Chat UI, delete conversation Option and chat delete from sender
  <table>
   <tr>
@@ -86,6 +88,7 @@
     <td><img src=".\demoPic\deleteSender.png" alt="Delete message from sender" width="500"/></td>
   </tr>
 </table>
+
 ### About and Change Password UI
 <table>
   <tr>
