@@ -7,7 +7,7 @@ import TabPanel from "@mui/lab/TabPanel";
 import Box from "@mui/material/Box";
 //import FormChangePhoto from "./Forms/FormChangePhoto";
 import FormChangeAbout from "./Forms/FormChangeAbout";
-import FormChangePassword from "./Forms/FormChangePassword";
+//import FormChangePassword from "./Forms/FormChangePassword";
 
 const AccountSettings = () => {
   const [tabValue, setTabValue] = useState("1");
@@ -21,18 +21,18 @@ const AccountSettings = () => {
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <TabList onChange={handleTabChange} aria-label="lab API tabs example">
             <Tab label="about" value="1" />
-            <Tab label="password" value="2" />
+            {/* <Tab label="password" value="2" /> */}
           </TabList>
         </Box>
         <TabPanel value="1" sx={{ width: "100%", marginTop: "10px" }}>
           <FormChangeAbout />
         </TabPanel>
-        <TabPanel value="2" sx={{ width: "100%", marginTop: "10px" }}>
+        {/* <TabPanel value="2" sx={{ width: "100%", marginTop: "10px" }}>
           <FormChangePassword />
-        </TabPanel>
-        <TabPanel value="3" sx={{ width: "100%", marginTop: "10px" }}>
-          {/* <FormChangePhoto /> */}
-        </TabPanel>
+        </TabPanel> */}
+        {/* <TabPanel value="3" sx={{ width: "100%", marginTop: "10px" }}>
+          <FormChangePhoto /> 
+        </TabPanel> */}
       </TabContext>
     </Stack>
   );

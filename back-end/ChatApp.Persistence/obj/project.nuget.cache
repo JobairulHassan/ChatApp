@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Z7Af6j5RYjQ=",
+  "dgSpecHash": "R0F9BJTtGdc=",
   "success": true,
-  "projectFilePath": "D:\\React\\ChatApp\\Back-end\\ChatApp.Persistence\\ChatApp.Persistence.csproj",
+  "projectFilePath": "D:\\React\\ChatApp\\back-end\\ChatApp.Persistence\\ChatApp.Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jobair\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Jobair\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

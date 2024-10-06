@@ -14,7 +14,7 @@ namespace ChatApp.Business.DataTransferObject.UserDTO
         public string Email { get; set; } = string.Empty;
 
 
-        [MinLength(8, ErrorMessage = "password length must be greater or equal 8 character")]
-        public string Password { get; set; } = string.Empty;
+        // [MinLength(8, ErrorMessage = "password length must be greater or equal 8 character")]
+        // public string Password { get; set; } = string.Empty;
     }
 }

@@ -28,12 +28,12 @@ namespace ChatApp.Presentation.Controllers
             return Ok(result);
         }
 
-        [Authorize]
-        [HttpPut("delete-message/{id}")]
-        public async Task<IActionResult> DeleteMessage(int id)
-        {
-            var result = await privateMessageService.DeletePrivateMessage(id);
-            return Ok(result);
-        }
+        // [Authorize]
+        // [HttpPut("delete-message/{id}")]
+        // public async Task<IActionResult> DeleteMessage(int id)
+        // {
+        //     var result = await privateMessageService.DeletePrivateMessage(id);
+        //     return Ok(result);
+        // }
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9Bu+g5EXeJw=",
+  "dgSpecHash": "1LhPAW/Vb7E=",
   "success": true,
-  "projectFilePath": "D:\\React\\ChatApp\\Back-end\\ChatApp.Presentation\\ChatApp.Presentation.csproj",
+  "projectFilePath": "D:\\React\\ChatApp\\back-end\\ChatApp.Presentation\\ChatApp.Presentation.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jobair\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Jobair\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",

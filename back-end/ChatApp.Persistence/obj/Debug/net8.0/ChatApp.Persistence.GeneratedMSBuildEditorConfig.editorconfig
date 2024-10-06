@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ChatApp.Persistence
-build_property.ProjectDir = D:\React\ChatApp\Back-end\ChatApp.Persistence\
+build_property.ProjectDir = D:\React\ChatApp\back-end\ChatApp.Persistence\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

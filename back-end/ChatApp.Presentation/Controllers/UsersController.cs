@@ -38,13 +38,13 @@ namespace ChatApp.Presentation.Controllers
             return Ok(user);
         }
 
-        [Authorize]
-        [HttpPut("{userId}/change-password")]
-        public async Task<IActionResult> ChangePassword([FromRoute] int userId, [FromBody] ChangePasswordRequestDTO changePasswordDTO)
-        {
-            await userAccountService.ChangePasswordAsync(userId, changePasswordDTO);
-            return NoContent();
-        }
+        // [Authorize]
+        // [HttpPut("{userId}/change-password")]
+        // public async Task<IActionResult> ChangePassword([FromRoute] int userId, [FromBody] ChangePasswordRequestDTO changePasswordDTO)
+        // {
+        //     await userAccountService.ChangePasswordAsync(userId, changePasswordDTO);
+        //     return NoContent();
+        // }
 
         [Authorize]
         [HttpPut("{userId}/about")]

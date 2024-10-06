@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import SignPageContainer from "../../Components/SignPagesContainer";
 import MyTextField from "../../Components/Inputs/MyTextField";
-import MyPasswordInputField from "../../Components/Inputs/MyPasswordInputField";
+///import MyPasswordInputField from "../../Components/Inputs/MyPasswordInputField";
 import ButtonWithLoading from "../../Components/General/ButtonWithLoading";
 import { Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
@@ -19,19 +19,15 @@ const SignUpPage = () => {
   const { openAlert } = useContext(AlertContext);
   const [isLoading, setIsLoading] = useState(false);
   const [inputs, setInputs] = useState({
-    firstname:"",
-    lastname:"",
+    firstname: "",
+    lastname: "",
     email: "",
-    password: "",
-    confirmPassword: "",
   });
 
   const [validationErrors, setValidationErrors] = useState({
     firstname: " ",
     lastname: " ",
     email: " ",
-    password: " ",
-    confirmPassword: " ",
   });
 
   const onChange = (e) => {
@@ -74,80 +70,76 @@ const SignUpPage = () => {
       }
     }
 
-    if (name === "password") {
-      if (!value) {
-        validationErrorsCopy[name] = "you must fill this field.";
-      } else if (value.length < 8) {
-        validationErrorsCopy[name] =
-          "password must be at least 8 characters long.";
-      } else {
-        validationErrorsCopy[name] = " ";
-      }
-    }
+    // if (name === "password") {
+    //   if (!value) {
+    //     validationErrorsCopy[name] = "you must fill this field.";
+    //   } else if (value.length < 8) {
+    //     validationErrorsCopy[name] =
+    //       "password must be at least 8 characters long.";
+    //   } else {
+    //     validationErrorsCopy[name] = " ";
+    //   }
+    // }
 
     setValidationErrors(validationErrorsCopy);
     setInputs({ ...inputs, [name]: value });
   };
 
-  const CheckPasswordValidation = () => {
-    if (
-      inputs.password !== inputs.confirmPassword &&
-      inputs.password !== "" &&
-      inputs.confirmPassword !== ""
-    ) {
-      setValidationErrors({
-        ...validationErrors,
-        confirmPassword: "passwords not matched",
-      });
-      return false;
-    }
-    return true;
-  };
+  // const CheckPasswordValidation = () => {
+  //   if (
+  //     inputs.password !== inputs.confirmPassword &&
+  //     inputs.password !== "" &&
+  //     inputs.confirmPassword !== ""
+  //   ) {
+  //     setValidationErrors({
+  //       ...validationErrors,
+  //       confirmPassword: "passwords not matched",
+  //     });
+  //     return false;
+  //   }
+  //   return true;
+  // };
 
   const isValidate =
     validationErrors.firstname === " " &&
     validationErrors.lastname === " " &&
     validationErrors.email === " " &&
-    validationErrors.password === " " &&
-    validationErrors.confirmPassword === " " &&
     inputs.firstname !== "" &&
     inputs.lastname !== "" &&
-    inputs.email !== "" &&
-    inputs.password !== "" &&
-    inputs.confirmPassword !== "";
+    inputs.email !== "";
 
   const onSubmit = async (e) => {
-    if (CheckPasswordValidation) {
-      setIsLoading(true);
-      await axios
-        .post(
-          "http://localhost:7271/api/registration",
-          JSON.stringify(inputs),
-          {
-            headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
-            },
+
+    setIsLoading(true);
+    await axios
+      .post(
+        "http://localhost:7271/api/registration",
+        JSON.stringify(inputs),
+        {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then((response) => {
+        openAlert("success", "success registration");
+        navigate("/sign-in");
+      })
+      .catch((error) => {
+        if (error.response) {
+          var errorMessage = error.response.data.error;
+          if (errorMessage === "this email is already exist") {
+            setValidationErrors({
+              ...validationErrors,
+              email: errorMessage,
+            });
           }
-        )
-        .then((response) => {
-          openAlert("success", "success registration");
-          navigate("/sign-in");
-        })
-        .catch((error) => {
-          if (error.response) {
-            var errorMessage = error.response.data.error;
-            if (errorMessage === "this email is already exist") {
-              setValidationErrors({
-                ...validationErrors,
-                email: errorMessage,
-              });
-            }
-          } else {
-            openAlert("error", "there is problem");
-          }
-        });
-    }
+        } else {
+          openAlert("error", "there is problem");
+        }
+      });
+
     setIsLoading(false);
   };
 
@@ -174,7 +166,7 @@ const SignUpPage = () => {
         value={inputs.email}
         validation={validationErrors.email}
       />
-      <MyPasswordInputField
+      {/* <MyPasswordInputField
         name={"password"}
         label={"password"}
         value={inputs.password}
@@ -187,7 +179,7 @@ const SignUpPage = () => {
         value={inputs.confirmPassword}
         onChange={onChange}
         validation={validationErrors.confirmPassword}
-      />
+      /> */}
       <ButtonWithLoading
         isLoading={isLoading}
         onClick={onSubmit}

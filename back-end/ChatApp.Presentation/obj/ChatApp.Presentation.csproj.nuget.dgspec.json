@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\React\\ChatApp\\Back-end\\ChatApp.Presentation\\ChatApp.Presentation.csproj": {}
+    "D:\\React\\ChatApp\\back-end\\ChatApp.Presentation\\ChatApp.Presentation.csproj": {}
   },
   "projects": {
-    "D:\\React\\ChatApp\\Back-end\\ChatApp.Business\\ChatApp.Business.csproj": {
+    "D:\\React\\ChatApp\\back-end\\ChatApp.Business\\ChatApp.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\React\\ChatApp\\Back-end\\ChatApp.Business\\ChatApp.Business.csproj",
+        "projectUniqueName": "D:\\React\\ChatApp\\back-end\\ChatApp.Business\\ChatApp.Business.csproj",
         "projectName": "ChatApp.Business",
-        "projectPath": "D:\\React\\ChatApp\\Back-end\\ChatApp.Business\\ChatApp.Business.csproj",
+        "projectPath": "D:\\React\\ChatApp\\back-end\\ChatApp.Business\\ChatApp.Business.csproj",
         "packagesPath": "C:\\Users\\Jobair\\.nuget\\packages\\",
-        "outputPath": "D:\\React\\ChatApp\\Back-end\\ChatApp.Business\\obj\\",
+        "outputPath": "D:\\React\\ChatApp\\back-end\\ChatApp.Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jobair\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,8 +26,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\React\\ChatApp\\Back-end\\ChatApp.Persistence\\ChatApp.Persistence.csproj": {
-                "projectPath": "D:\\React\\ChatApp\\Back-end\\ChatApp.Persistence\\ChatApp.Persistence.csproj"
+              "D:\\React\\ChatApp\\back-end\\ChatApp.Persistence\\ChatApp.Persistence.csproj": {
+                "projectPath": "D:\\React\\ChatApp\\back-end\\ChatApp.Persistence\\ChatApp.Persistence.csproj"
               }
             }
           }
@@ -96,14 +96,14 @@
         }
       }
     },
-    "D:\\React\\ChatApp\\Back-end\\ChatApp.Persistence\\ChatApp.Persistence.csproj": {
+    "D:\\React\\ChatApp\\back-end\\ChatApp.Persistence\\ChatApp.Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\React\\ChatApp\\Back-end\\ChatApp.Persistence\\ChatApp.Persistence.csproj",
+        "projectUniqueName": "D:\\React\\ChatApp\\back-end\\ChatApp.Persistence\\ChatApp.Persistence.csproj",
         "projectName": "ChatApp.Persistence",
-        "projectPath": "D:\\React\\ChatApp\\Back-end\\ChatApp.Persistence\\ChatApp.Persistence.csproj",
+        "projectPath": "D:\\React\\ChatApp\\back-end\\ChatApp.Persistence\\ChatApp.Persistence.csproj",
         "packagesPath": "C:\\Users\\Jobair\\.nuget\\packages\\",
-        "outputPath": "D:\\React\\ChatApp\\Back-end\\ChatApp.Persistence\\obj\\",
+        "outputPath": "D:\\React\\ChatApp\\back-end\\ChatApp.Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jobair\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -178,14 +178,14 @@
         }
       }
     },
-    "D:\\React\\ChatApp\\Back-end\\ChatApp.Presentation\\ChatApp.Presentation.csproj": {
+    "D:\\React\\ChatApp\\back-end\\ChatApp.Presentation\\ChatApp.Presentation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\React\\ChatApp\\Back-end\\ChatApp.Presentation\\ChatApp.Presentation.csproj",
+        "projectUniqueName": "D:\\React\\ChatApp\\back-end\\ChatApp.Presentation\\ChatApp.Presentation.csproj",
         "projectName": "ChatApp.Presentation",
-        "projectPath": "D:\\React\\ChatApp\\Back-end\\ChatApp.Presentation\\ChatApp.Presentation.csproj",
+        "projectPath": "D:\\React\\ChatApp\\back-end\\ChatApp.Presentation\\ChatApp.Presentation.csproj",
         "packagesPath": "C:\\Users\\Jobair\\.nuget\\packages\\",
-        "outputPath": "D:\\React\\ChatApp\\Back-end\\ChatApp.Presentation\\obj\\",
+        "outputPath": "D:\\React\\ChatApp\\back-end\\ChatApp.Presentation\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jobair\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -200,8 +200,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\React\\ChatApp\\Back-end\\ChatApp.Business\\ChatApp.Business.csproj": {
-                "projectPath": "D:\\React\\ChatApp\\Back-end\\ChatApp.Business\\ChatApp.Business.csproj"
+              "D:\\React\\ChatApp\\back-end\\ChatApp.Business\\ChatApp.Business.csproj": {
+                "projectPath": "D:\\React\\ChatApp\\back-end\\ChatApp.Business\\ChatApp.Business.csproj"
               }
             }
           }

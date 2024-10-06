@@ -41,6 +41,18 @@ const ChatContextProvider = ({ children }) => {
       connection.on("ReceiveActiveUsers", (newActiveUsers) => {
         setActiveUsers(newActiveUsers);
       });
+
+      connection.on("MessageDeleted", (messageId) => {
+        if(selectedUser==null)
+          selectedUser = selectedUserRef.current; 
+        console.log(user);
+        console.log(selectedUser);
+        if(user && selectedUser)
+          loadMessages(true);
+        console.log(`Message with ID ${messageId} was deleted.`);
+        
+      });
+
       await connection
         .start()
         .then(() => {
@@ -62,6 +74,7 @@ const ChatContextProvider = ({ children }) => {
   }, [selectedUser]);
 
   const loadMessages = async (isNewUser) => {
+    
     var data = {
       pageDate: messages[0] && !isNewUser ? messages[0].creationDate : null,
       pageSize: 13,
@@ -104,25 +117,12 @@ const ChatContextProvider = ({ children }) => {
   };
 
   const handleDeleteMessage = async (id) => {
-    console.log(id);
     if (!id) {
       console.warn("No message ID provided for deletion.");
       return;
     }
-  
-    try {
-      await axios.put(`http://localhost:7271/api/private-messages/delete-message/${id}`, null, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-  
-      setMessages((prevMessages) => prevMessages.filter(message => message.id !== id));
-      
-      console.log(`Message with ID ${id} deleted successfully.`);
-    } catch (error) {
-      console.error("Error deleting message:", error);
-    }
+    await connectionState.invoke("DeleteMessage", id);
+    loadMessages(true);
   };
 
   return (

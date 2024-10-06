@@ -69,8 +69,8 @@
 ### sign-in / sign-up
 <table>
   <tr>
-    <td><img src=".\demoPic\Registration.png" alt="Sign-in" width="500"/></td>
-    <td><img src=".\demoPic\login.png" alt="Sign-up" width="500"/></td>
+    <td><img src=".\demoPic\Registration.png" alt="Sign-in" width="700"/></td>
+    <td><img src=".\demoPic\login.png" alt="Sign-up" width="700"/></td>
   </tr>
 </table>
 
@@ -84,15 +84,15 @@
 ### Chat UI, delete conversation Option and chat delete from sender
  <table>
   <tr>
-    <td><img src=".\demoPic\deleteReceiver.png" alt="Delete option after Right click" width="500"/></td>
-    <td><img src=".\demoPic\deleteSender.png" alt="Delete message from sender" width="500"/></td>
+    <td><img src=".\demoPic\deleteReceiver.png" alt="Delete option after Right click" width="700"/></td>
+    <td><img src=".\demoPic\deleteSender.png" alt="Delete message from sender" width="700"/></td>
   </tr>
 </table>
 
 ### About and Change Password UI
 <table>
   <tr>
-    <td><img src=".\demoPic\addAbout.png" alt="About" width="500"/></td>
-    <td><img src=".\demoPic\changePassword.png" alt="Change Password" width="500"/></td>
+    <td><img src=".\demoPic\addAbout.png" alt="About" width="700"/></td>
+    <td><img src=".\demoPic\changePassword.png" alt="Change Password" width="700"/></td>
   </tr>
 </table>

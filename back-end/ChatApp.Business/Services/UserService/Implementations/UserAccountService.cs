@@ -34,14 +34,12 @@ namespace ChatApp.Business.Services.UserService.Implementations
             {
                 throw new NotFoundException(UserExceptionMessages.EmailAlreadyExsist);
             }
-            PasswordHashing.HashPassword(userRequestDTO.Password, out byte[] passwordHash, out byte[] passwordSalt);
+            //PasswordHashing.HashPassword(userRequestDTO.Password, out byte[] passwordHash, out byte[] passwordSalt);
             var user = new User()
             {
                 FirstName = userRequestDTO.FirstName,
                 LastName = userRequestDTO.LastName,
-                Email = userRequestDTO.Email, //.ToLower()
-                PasswordHash = passwordHash,
-                PasswordSalt = passwordSalt,
+                Email = userRequestDTO.Email,
             };
             await userRepository.AddAsync(user);
             await unitOfWork.SaveChangesAsync();
@@ -71,27 +69,27 @@ namespace ChatApp.Business.Services.UserService.Implementations
             return mapper.Map<UserResponseDTO>(user);
         }
 
-        public async Task ChangePasswordAsync(int userId, ChangePasswordRequestDTO changePasswordDTO)
-        {
-            var authenticatedUserId = authenticatedUserService.GetAuthenticatedUserId();
-            if (authenticatedUserId != userId)
-            {
-                throw new UnauthorizedException();
-            }
-            var user = await userRepository.GetUserById(userId);
-            if (user == null)
-            {
-                throw new NotFoundException(UserExceptionMessages.NotFoundUserById);
-            }
-            if (!PasswordHashing.VerifyPassword(changePasswordDTO.OldPassword, user.PasswordHash, user.PasswordSalt))
-            {
-                throw new BadRequestException(UserExceptionMessages.IncorrectPassword);
-            }
-            PasswordHashing.HashPassword(changePasswordDTO.NewPassword, out byte[] passwordHash, out byte[] passwordSalt);
-            user.PasswordHash = passwordHash;
-            user.PasswordSalt = passwordSalt;
-            await unitOfWork.SaveChangesAsync();
-        }
+        // public async Task ChangePasswordAsync(int userId, ChangePasswordRequestDTO changePasswordDTO)
+        // {
+        //     var authenticatedUserId = authenticatedUserService.GetAuthenticatedUserId();
+        //     if (authenticatedUserId != userId)
+        //     {
+        //         throw new UnauthorizedException();
+        //     }
+        //     var user = await userRepository.GetUserById(userId);
+        //     if (user == null)
+        //     {
+        //         throw new NotFoundException(UserExceptionMessages.NotFoundUserById);
+        //     }
+        //     if (!PasswordHashing.VerifyPassword(changePasswordDTO.OldPassword, user.PasswordHash, user.PasswordSalt))
+        //     {
+        //         throw new BadRequestException(UserExceptionMessages.IncorrectPassword);
+        //     }
+        //     PasswordHashing.HashPassword(changePasswordDTO.NewPassword, out byte[] passwordHash, out byte[] passwordSalt);
+        //     user.PasswordHash = passwordHash;
+        //     user.PasswordSalt = passwordSalt;
+        //     await unitOfWork.SaveChangesAsync();
+        // }
 
         public async Task ChangeUserAboutAsync(int userId, string newAbout)
         {

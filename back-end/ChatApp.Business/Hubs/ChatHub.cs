@@ -34,6 +34,11 @@ namespace ChatApp.Business.Hubs
                 await Clients.Client(activeUsers[userId]).SendAsync("ReceiveMessage", Storedmessage, email);
             }
         }
+        public async Task DeleteMessage(int messageId)
+        {
+            await privateMessageService.DeletePrivateMessage(messageId);
+            await Clients.All.SendAsync("MessageDeleted", messageId);
+        }
 
         public async Task AddUser(int userId, string connectionId)
         {

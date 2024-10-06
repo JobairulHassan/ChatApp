@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ChatApp.Persistence.Migrations
 {
     [DbContext(typeof(ChatContext))]
-    [Migration("20240929174637_MyMigration")]
+    [Migration("20241005152847_MyMigration")]
     partial class MyMigration
     {
         /// <inheritdoc />
@@ -86,14 +86,6 @@ namespace ChatApp.Persistence.Migrations
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<byte[]>("PasswordHash")
-                        .IsRequired()
-                        .HasColumnType("varbinary(max)");
-
-                    b.Property<byte[]>("PasswordSalt")
-                        .IsRequired()
-                        .HasColumnType("varbinary(max)");
 
                     b.HasKey("Id");
 

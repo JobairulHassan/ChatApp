@@ -21,7 +21,7 @@ const ReceivedMessage = ({ message, index, currentUserId }) => {
         }}
       >
         {isDeletedBySender ? (
-          <span style={{ color: '#dbdbdb', fontStyle: 'italic' }}>Message removed</span>
+          <span style={{ color: '#dbdbdb',pointerEvents: 'none', fontStyle: 'italic' }}>Message removed</span>
         ) : (
           message.textBody
         )}

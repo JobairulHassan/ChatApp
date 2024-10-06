@@ -41,12 +41,19 @@ const ChatMessages = () => {
       )}
       {messages.map((message, index) => {
         var messageType = message.senderId === user.id ? "sended" : "received";
+        var isMessageDeleted = message.isDeleted === message.senderId;
         return (
           <div
             key={message.id}
-            onContextMenu={(e) => handleContextMenu(e, index)}
+            onContextMenu={(e) => {
+              if (!isMessageDeleted) {
+                handleContextMenu(e, index);
+              }
+            }}
             style={{
-              alignSelf: messageType === 'sended' ? 'flex-end' : 'flex-start'
+              alignSelf: messageType === 'sended' ? 'flex-end' : 'flex-start',
+              cursor: isMessageDeleted ? 'default' : 'context-menu',
+              opacity: isMessageDeleted ? 0.5 : 1 
             }}
           >
             {messageType === "sended" ? (

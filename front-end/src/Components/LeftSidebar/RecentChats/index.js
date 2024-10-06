@@ -93,13 +93,9 @@ const RecentChats = ({ displayState }) => {
     >
       {chats.map((chat, index) => {
         return (
-          <ListItem
-            disablePadding
-            selected={selectedUser?.id === chat.user.id}
-            key={index}
-          >
+          <ListItem disablePadding key={index}>
             <ListItemButton
-              key={index}
+              selected={selectedUser?.id === chat.user.id} // Move selected here
               onClick={() => setSelectedUser(chat.user)}
             >
               <ChatCard chat={chat} />

@@ -21,9 +21,7 @@ namespace ChatApp.Persistence.Migrations
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     About = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsDarkTheme = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
-                    PasswordHash = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
-                    PasswordSalt = table.Column<byte[]>(type: "varbinary(max)", nullable: false)
+                    IsDarkTheme = table.Column<bool>(type: "bit", nullable: false, defaultValue: false)
                 },
                 constraints: table =>
                 {

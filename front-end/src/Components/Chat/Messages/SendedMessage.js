@@ -4,8 +4,6 @@ import GetTime from "../../General/GetTime";
 
 const SendedMessage = ({ message, index, currentUserId }) => {
   const isDeletedBySender = message.isDeleted === message.senderId;
-  //const isDeletedByReceiver = message.isDeleted === message.receiverId;
-  //console.log('currentuserID: '+currentUserId+ "  DeletedId: "+message.IsDeleted);
   return (
     <Tooltip title={GetTime(message.creationDate)} placement="left" arrow>
       <Stack
